@@ -4,6 +4,7 @@ import express from 'express';
 import connectDB from './config/connDB';
 import userRouter from './router/user.router';
 import { authMiddleware } from './middleware/authMiddleware';
+import projectRouter from './router/project.router';
 
 
 const app = express();
@@ -17,6 +18,7 @@ app.get('/', (req, res) => {
 
 app.use('/api/users' , userRouter);
 app.use(authMiddleware);
+app.use('/api/projects', projectRouter);
 
 app.listen(PORT, () => {
   console.log(`Server running at http://localhost:${PORT}`);

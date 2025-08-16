@@ -3,7 +3,7 @@ import jwt, { SignOptions } from 'jsonwebtoken';
 
 export const signAccessToken = (userId: string) => {
     try {
-        const payload = { sub: userId };
+        const payload = { _id: userId };
         const secret = process.env.JWT_SECRET as string;
         const options: SignOptions = {
             expiresIn: '1h',
