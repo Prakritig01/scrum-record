@@ -17,6 +17,7 @@ app.get('/', (req, res) => {
 });
 
 app.use('/api/users' , userRouter);
+
 app.use(authMiddleware);
 app.use('/api/projects', projectRouter);
 
